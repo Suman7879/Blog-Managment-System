@@ -1,0 +1,92 @@
+<%- include("./layouts/header.ejs") %>
+
+    <style>
+        body {
+            background-color: rgb(200, 216, 244);
+            margin-top: 20px;
+            margin-bottom: 40px;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+        }
+
+        h1 {
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
+
+        form input {
+            width: 40%;
+            border: 1px solid black;
+            outline: none;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        form input .file {
+            width: 40%;
+            outline: none;
+
+        }
+
+        form textarea {
+            width: 40%;
+            border: 1px solid black;
+            outline: none;
+            border-radius: 5px;
+        }
+    </style>
+
+
+
+    <div class="container">
+        <h1>Blog-Setup</h1>
+        <form action="" method="POST" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-sm-20">
+                    <input type="text" name="blog_title" placeholder="Enter Blog Title" required>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-sm-20">
+                    <input class="file" type="file" name="blog_image" required>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-sm-20">
+                    <textarea name="description" placeholder="Enter Description" required></textarea>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-sm-20">
+                    <input type="text" name="name" placeholder="Enter Admin Name" required>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-sm-20">
+                    <input type="email" name="email" placeholder="Enter Email" required>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-sm-20">
+                    <input type="password" name="password" placeholder="Enter Password" required>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-sm-20">
+                    <input type="submit" class="btn btn-primary" value="Blog-Setup" required>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <% 
+    if(typeof message !== 'undefined'){
+        %>
+        <p style="color: brown;"><%= message %></p>
+        <%
+    }
+  %>
+
+
+    <%- include("./layouts/footer.ejs") %>
